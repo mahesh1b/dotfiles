@@ -40,7 +40,19 @@ local options = {
         no_gap = true,
       },
     }
-  }
+  },
+    term = {
+    winopts = { number = false, relativenumber = false },
+    sizes = { sp = 0.3, vsp = 0.35, ["bo sp"] = 0.3, ["bo vsp"] = 0.2 },
+    float = {
+      relative = "editor",
+      row = 0.5,
+      col = 0.3,
+      width = 1.0,
+      height = 1.0,
+      border = "single",
+    },
+  },
 }
 local status, chadrc = pcall(require, "chadrc")
 return vim.tbl_deep_extend("force", options, status and chadrc or {})
