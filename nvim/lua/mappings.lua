@@ -19,5 +19,3 @@ end, { desc = "terminal new vertical term" })
 map("n", "<leader>tf", function()
   require("nvchad.term").toggle { pos = "float" }
 end, { desc = "terminal toggle floating term" })
-
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
