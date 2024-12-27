@@ -1,28 +1,6 @@
 # Theme
-background = #1d2021
-foreground = #ebdbb2
-cursor-color = #ea6962
-selection-background = #404040
-selection-foreground = #ebdbb2
-
-palette = 0=#292929
-palette = 1=#ea6962
-palette = 2=#a9b665
-palette = 3=#d8a657
-palette = 4=#7daea3
-palette = 5=#d3869b
-palette = 6=#89b482
-palette = 7=#bdae93
-palette = 8=#595959
-palette = 9=#ea6962
-palette = 10=#a9b665
-palette = 11=#d8a657
-palette = 12=#7daea3
-palette = 13=#d3869b
-palette = 14=#89b482
-palette = 15=#a89984
-
 term = xterm-256color
+theme = "GruvboxDark"
 
 # Fonts
 font-family = "DepartureMono Nerd Font Mono"
@@ -52,7 +30,8 @@ background-blur-radius = 20
 window-padding-balance = true
 macos-window-shadow = false
 macos-titlebar-style = hidden
-
+window-height = 30
+window-width = 90
 # general
 auto-update = check
 gtk-single-instance = true
