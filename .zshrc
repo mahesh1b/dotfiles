@@ -1,9 +1,42 @@
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="spaceship" #"robbyrussell"
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search aws terraform) 
+source $ZSH/oh-my-zsh.sh
+# Example aliases
 alias tf=terraform
 alias vim=nvim
 alias k=kubectl
+alias cat=bat
+alias cd=z
+alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"
+alias ls=eza
+alias l="eza -lah --no-time --icons --git --group-directories-first --no-permissions"
+alias ld="eza -lahD --no-time --icons --git --no-permissions --no-filesize"
+alias rain="python3 Desktop/playground/rainfall/source/rainfall.py green"
+
+# for zxoide bin
+export PATH="$PATH:/Users/mahesh/.local/bin"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 # k8s default editor
 export KUBE_EDITOR="nvim"
+export KUBECONFIG=~/.config/kubectx/cr-prod.yaml:~/.config/kubectx/cr-nonprod.yaml:~/.config/kubectx/gep-nonprod.yaml:~/.config/kubectx/grit-uat.yaml:~/.config/kubectx/grit-prod.yaml:~/.config/kubectx/grit-sandbox.yaml:~/.config/kubectx/myfortuna-uat.yaml:~/.config/kubectx/myfortuna-prod.yaml:~/.config/kubectx/myfortuna-sandbox.yaml:~/.config/kubectx/asure-uat.yaml:~/.config/kubectx/asure-prod.yaml:~/.config/kubectx/asure-sandbox.yaml:~/.config/kubectx/t2z.yaml
+
+# FZF Latte 
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#d20f39 \
+--color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78 \
+--color=marker:#7287fd,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39 \
+--color=selected-bg:#bcc0cc \
+--multi"
+
+#kubectl autocompletion
+autoload -Uz compinit
+compinit
+source <(kubectl completion zsh)
 
 # DuploToken
 asure_sandbox_token() {
@@ -25,28 +58,5 @@ grit_prod_token() {
   export duplo_token=$(duplo-jit duplo --host https://duplo.prod-apps.gritfinancial.org --interactive | jq -r '.DuploToken')
 }
 
-# Enable colors and change prompt:
-autoload -U colors && colors
-#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-
-export KUBECONFIG=~/.kube/custom/t2z-infra-eks:~/.kube/custom/cybrilla-sandbox:~/.kube/custom/cybrilla-internal:~/.kube/custom/asure-prod.yaml:~/.kube/custom/cr-nonprod:~/.kube/custom/cr-prod:~/.kube/custom/gep-nonprod:~/.kube/custom/asure-mgmt-eks:~/.kube/custom/asure-uat.yaml:~/.kube/custom/fortuna-prod.yaml:~/.kube/custom/fortuna-uat.yaml:~/.kube/custom/grit-sandbox.yaml:~/.kube/custom/asure-sandbox.yaml:~/.kube/custom/fortuna-sandbox.yaml:~/.kube/custom/grit-prod.yaml:~/.kube/custom/grit-uat.yaml
-
-#kubectl autocompletion
-autoload -Uz compinit
-compinit
-source <(kubectl completion zsh)
-
-source ~/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-# Pure
-PURE_GIT_DOWN_ARROW=
-PURE_GIT_UP_ARROW=
-autoload -U promptinit; promptinit
-prompt pure
-
-# pokemon
-pokemon-colorscripts -r --no-title | fastfetch --file-raw -
-export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+eval "$(zoxide init zsh)"
+export SPACESHIP_AWS_SYMBOL="  "
