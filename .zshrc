@@ -15,7 +15,7 @@ alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"
 alias ls=eza
 alias l="eza -lah --no-time --icons --git --group-directories-first --no-permissions"
 alias ld="eza -lahD --no-time --icons --git --no-permissions --no-filesize"
-alias rain="python3 Desktop/playground/rainfall/source/rainfall.py green"
+alias rain="python3 ~/.config/rainfall.py green"
 
 # for zxoide bin
 export PATH="$PATH:/Users/mahesh/.local/bin"
