@@ -1,23 +1,19 @@
 # Theme
 term = xterm-256color
-theme = "GruvboxDark"
+theme = catppuccin-latte
+title = " "
 
 # Fonts
-font-family = "DepartureMono Nerd Font"
+font-family = "JetBrainsMono Nerd Font Propo"
 font-size = 15
 font-thicken = true
-
-# Ghostty icon
-macos-icon = custom-style
-macos-icon-frame = aluminum
-macos-icon-ghost-color = grey
-macos-icon-screen-color = dark grey,black
 
 # Mouse, Cursor & Clipboard
 cursor-style = bar
 copy-on-select = true
 cursor-style-blink = true
 mouse-hide-while-typing = true
+cursor-color = "#030303"
 
 # Window appearance
 bold-is-bright = true
@@ -36,10 +32,7 @@ macos-titlebar-proxy-icon = hidden
 #macos-option-as-alt = true
 
 # general
-auto-update = check
-gtk-single-instance = true
-shell-integration = zsh
-shell-integration-features = cursor,sudo,title
+confirm-close-surface = false
 
 # Splits
 keybind = ctrl+shift+v=new_split:right
