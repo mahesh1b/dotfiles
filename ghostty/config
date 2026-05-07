@@ -1,10 +1,11 @@
 # Theme
 term = xterm-256color
-theme = ayu
+theme = "Gruvbox Dark"
+
 title = " "
 
 # Fonts
-font-family = "JetBrainsMono Nerd Font Propo"
+font-family = "Mononoki Nerd Font"
 font-size = 15
 font-thicken = true
 
@@ -36,8 +37,8 @@ confirm-close-surface = false
 # Splits
 keybind = ctrl+shift+v=new_split:right
 keybind = ctrl+shift+h=new_split:down
-keybind = ctrl+shift+,=previous_tab
-keybind = ctrl+shift+.=next_tab
+keybind = super+left_bracket=move_tab:-1
+keybind = super+left_bracket=move_tab:-1
 
 # Clipboard & Font
 keybind = super+c=copy_to_clipboard
@@ -47,10 +48,10 @@ keybind = ctrl+shift+minus=decrease_font_size:1
 
 # Windows
 keybind = super+q=quit
-keybind = super+t=new_tab
-keybind = super+n=new_window
+keybind = super+n=new_tab
 keybind = super+k=clear_screen
 keybind = ctrl+shift+q=close_surface
 
 # Services
 keybind = ctrl+shift+r=reload_config
+
